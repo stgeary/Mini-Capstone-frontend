@@ -12,7 +12,7 @@ export function Content() {
     const [currentProduct, setCurrentProduct] = useState({});
 
     const handleIndexProducts = () => {
-        axios.get("http://localhroduct:3000/products.json").then((response) => {
+        axios.get("http://localhost:3000/products.json").then((response) => {
             setProducts(response.data);
             console.log(products);
         });
@@ -34,7 +34,7 @@ export function Content() {
       }
       
     const handleUpdateProduct = (id, params) => {
-        axios.patch("http://localhost:3000/products.json" + id + ".json", params).then((response) => {
+        axios.patch("http://localhost:3000/products/" + id + ".json", params).then((response) => {
           setProducts(
             products.map((product) => {
               if (product.id === response.data.id) {
@@ -48,7 +48,7 @@ export function Content() {
       };
     const handleDestroyProduct = (id) => {
         // eslint-disable-next-line no-unused-vars
-        axios.delete("http://localhroduct:3000/products.json" + id + ".json", id).then((response) => {
+        axios.delete("http://localhost:3000/products/" + id + ".json", id).then((response) => {
             setProducts(products.filter((product) => product.id !== id));
             handleClose();
           });

@@ -10,12 +10,13 @@ export function ProductsIndex(props) {
         <div className="cards">
           {props.products.map((product) => (
             <div key={product.id} className="products card">
-              <h2>{product.title}</h2>
-              <p>{product.body}</p>
+              <h2>{product.name}</h2>
+              <p>{product.description}</p>
               <img src={product.image} alt="" />
+              <p>${product.price}</p>
+              <p>Quantity: {product.quantity}</p>
+              <p>Color: {product.color}</p>
               <div className="card-body">
-              <h2>{product.title}</h2>
-              <p>{product.body} </p>
               <button onClick={() => props.onShowProduct(product)}>More info</button>
 
             </div>

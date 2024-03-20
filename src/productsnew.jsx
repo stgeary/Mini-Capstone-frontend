@@ -1,15 +1,17 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 export function ProductsNew() {
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("yo"); // hello???
+        console.log("hi");
         const params = new FormData(event.target);
         props.onCreateProduct(params);
         event.target.reset();
     }
     return (
       <div id="products-new">
-        <h1>New product</h1>
+        <h1>New "creation"</h1>
         <form onSubmit={handleSubmit}>
         <div>
             Name: <input type="text" />
