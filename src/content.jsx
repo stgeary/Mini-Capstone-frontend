@@ -5,6 +5,7 @@ import { useState } from "react";
 import {useEffect} from "react";
 import {Modal} from "./modal"
 import {ProductsShow} from "./ProductsShow";
+// import {Signup} from "./Signup";
 
 export function Content() {
     const [products, setProducts] = useState([]);
@@ -53,6 +54,9 @@ export function Content() {
             handleClose();
           });
     };
+
+    // const onSubmit
+
     useEffect(handleIndexProducts, []);
 
     return (
