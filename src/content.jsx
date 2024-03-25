@@ -5,7 +5,10 @@ import { useState } from "react";
 import {useEffect} from "react";
 import {Modal} from "./modal"
 import {ProductsShow} from "./ProductsShow";
-// import {Signup} from "./Signup";
+import {Signup} from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
+
 
 export function Content() {
     const [products, setProducts] = useState([]);
@@ -55,7 +58,7 @@ export function Content() {
           });
     };
 
-    // const onSubmit
+
 
     useEffect(handleIndexProducts, []);
 
@@ -64,7 +67,10 @@ export function Content() {
         <ProductsNew onCreateProduct={handleCreateProduct}/>
         <ProductsIndex products={products} onShowProduct={handleShowProduct}/>
         <Modal show={isProductsShowVisible} onClose={handleClose}>
-            <ProductsShow product = {currentProduct} onUpdateProduct={handleUpdateProduct} onDestroyProduct={handleDestroyProduct} />
+            <ProductsShow 
+            product = {currentProduct} 
+            onUpdateProduct={handleUpdateProduct} 
+            onDestroyProduct={handleDestroyProduct} />
       </Modal>
       </>
     );
