@@ -64,6 +64,10 @@ export function Content() {
 
     return (
         <>
+        <div className = "container">
+            <Signup />
+            <Login />
+            <LogoutLink />
         <ProductsNew onCreateProduct={handleCreateProduct}/>
         <ProductsIndex products={products} onShowProduct={handleShowProduct}/>
         <Modal show={isProductsShowVisible} onClose={handleClose}>
@@ -71,7 +75,8 @@ export function Content() {
             product = {currentProduct} 
             onUpdateProduct={handleUpdateProduct} 
             onDestroyProduct={handleDestroyProduct} />
-      </Modal>
+        </Modal>
+        </div>
       </>
     );
   }
