@@ -12,6 +12,7 @@ export function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors([]);
+    
     const params = new FormData(event.target);
     axios
       .post("http://localhost:3000/sessions.json", params)
