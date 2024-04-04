@@ -6,6 +6,8 @@ import {Footer} from "./footer";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
+  const handleOpenLoginModal = () => setShowLoginModal(true);
+  const handleCloseLoginModal = () => setShowLoginModal(false);
   return (
     <>
       <div>
