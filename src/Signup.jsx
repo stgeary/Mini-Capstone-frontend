@@ -21,6 +21,8 @@ export function Signup() {
       });
   };
 
+  const [name, setName] = useState("");
+
   return (
     <div id="signup">
       <h1>Signup</h1>
@@ -32,6 +34,8 @@ export function Signup() {
       <form onSubmit={handleSubmit}>
         <div>
           Name: <input name="name" type="text" />
+          value={name} onChange={(event) => setName(event.target.value)}
+          <small>{20 - name.length} characters remaining</small>
         </div>
         <div>
           Email: <input name="email" type="email" />
@@ -40,7 +44,8 @@ export function Signup() {
           Password: <input name="password" type="password" />
         </div>
         <div>
-          Password confirmation: <input name="password_confirmation" type="password" />
+          Password confirmation:{" "}
+          <input name="password_confirmation" type="password" />
         </div>
         <button type="submit">Signup</button>
       </form>
